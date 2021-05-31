@@ -169,6 +169,37 @@ body {
   }
 }
 
+/* footer */
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.75rem;
+  text-align: center;
+  color: $neu-pale-blue;
+  font-weight: $font-regular;
+  margin-bottom: 2em;
+  &__section {
+    margin-top: 1em;
+  }
+  &__link {
+    color: $white;
+    text-decoration: none;
+    font-weight: $font-bold;
+    &:hover,
+    &:focus-visible {
+      color: $white;
+      outline: 3px dotted $highlight !important;
+      outline-offset: 0.25rem;
+    }
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
+  }
+}
+
+/* animations */
+
 @keyframes list-item-anim {
   0% {
     transform: rotateZ(0);
@@ -233,34 +264,7 @@ body {
   }
 }
 
-/* footer */
-
-.attribution {
-  position: absolute;
-  bottom: 0;
-  font-size: 0.75rem;
-  text-align: center;
-  color: $neu-pale-blue;
-  font-weight: $font-regular;
-  margin-bottom: 2em;
-  &__section {
-    margin-top: 1em;
-  }
-  &__link {
-    color: $white;
-    text-decoration: none;
-    font-weight: $font-bold;
-    &:hover,
-    &:focus-visible {
-      color: $white;
-      outline: 3px dotted $highlight !important;
-      outline-offset: 0.25rem;
-    }
-    &:focus:not(:focus-visible) {
-      outline: transparent;
-    }
-  }
-}
+/* media query - medium screens */
 
 @media screen and (min-width: $breakpoint-tablet) {
   .storage {
@@ -282,6 +286,8 @@ body {
     }
   }
 }
+
+/* media query - large screens */
 
 @media screen and (min-width: $breakpoint-laptop) {
   body {
@@ -315,6 +321,8 @@ body {
     }
   }
 }
+
+/* footer position for smaller screens */
 
 @media screen and (max-height: 43rem) {
   .attribution {

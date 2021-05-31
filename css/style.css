@@ -142,6 +142,34 @@ body {
   font-weight: 700;
 }
 
+/* footer */
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #dddbff;
+  font-weight: 400;
+  margin-bottom: 2em;
+}
+.attribution__section {
+  margin-top: 1em;
+}
+.attribution__link {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+.attribution__link:hover, .attribution__link:focus-visible {
+  color: white;
+  outline: 3px dotted #ffa399 !important;
+  outline-offset: 0.25rem;
+}
+.attribution__link:focus:not(:focus-visible) {
+  outline: transparent;
+}
+
+/* animations */
 @keyframes list-item-anim {
   0% {
     transform: rotateZ(0);
@@ -200,33 +228,7 @@ body {
     opacity: 1;
   }
 }
-/* footer */
-.attribution {
-  position: absolute;
-  bottom: 0;
-  font-size: 0.75rem;
-  text-align: center;
-  color: #dddbff;
-  font-weight: 400;
-  margin-bottom: 2em;
-}
-.attribution__section {
-  margin-top: 1em;
-}
-.attribution__link {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-}
-.attribution__link:hover, .attribution__link:focus-visible {
-  color: white;
-  outline: 3px dotted #ffa399 !important;
-  outline-offset: 0.25rem;
-}
-.attribution__link:focus:not(:focus-visible) {
-  outline: transparent;
-}
-
+/* media query - medium screens */
 @media screen and (min-width: 36rem) {
   .storage__pop-up {
     top: 5em;
@@ -245,6 +247,7 @@ body {
     top: -1.5em;
   }
 }
+/* media query - large screens */
 @media screen and (min-width: 62rem) {
   body {
     background: url("../images/bg-desktop.png") no-repeat #0c122c;
@@ -280,6 +283,7 @@ body {
     padding: 1.25em 1.5em;
   }
 }
+/* footer position for smaller screens */
 @media screen and (max-height: 43rem) {
   .attribution {
     position: relative;
