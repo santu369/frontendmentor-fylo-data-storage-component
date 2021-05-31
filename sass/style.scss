@@ -73,6 +73,10 @@ body {
       outline: transparent;
     }
   }
+  &__img {
+    height: auto;
+    width: 100%;
+  }
 }
 
 .list {

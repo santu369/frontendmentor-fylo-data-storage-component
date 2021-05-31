@@ -48,6 +48,10 @@ body {
 .header__logo:focus:not(:focus-visible) {
   outline: transparent;
 }
+.header__img {
+  height: auto;
+  width: 100%;
+}
 
 .list {
   padding: 0 0.25em;
