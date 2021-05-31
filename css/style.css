@@ -53,9 +53,6 @@ body {
   padding: 0 0.25em;
   gap: 1em;
 }
-.list__item {
-  animation: list-item-anim 500ms ease-out;
-}
 .list__link {
   border-radius: 0.5em;
   background: #0c122c;
@@ -100,7 +97,6 @@ body {
   position: absolute;
   left: 0;
   right: 18.5%;
-  animation: storage-fill-anim 1s ease-out forwards;
   height: 0.8rem;
   margin: 0.125rem 0 0.1rem 0.1rem;
   border-radius: 1em;
@@ -114,12 +110,7 @@ body {
   border-radius: 100%;
   background: white;
   right: 18.7%;
-  animation: storage-ball-anim 1s ease-out forwards;
   margin: 0.2rem 0 0.1rem 0.1rem;
-}
-.storage__pop-up {
-  animation: storage-pop-anim 1s ease-out 1s forwards;
-  visibility: hidden;
 }
 .storage__text {
   margin: 0;
@@ -276,10 +267,8 @@ body {
   .storage__pop-up:after {
     top: 4.5em;
     transform: rotate(180deg) scaleX(-1);
-    animation: storage-lg-pop-after-anim 1s ease-out 1s forwards;
   }
   .storage__text {
-    animation: storage-lg-pop-anim 1s ease-out 1s forwards;
     padding: 1.25em 1.5em;
   }
 }
@@ -288,6 +277,37 @@ body {
   .attribution {
     position: relative;
     margin-top: 5em;
+  }
+}
+/* animations for users who set no preference */
+@media (prefers-reduced-motion: no-preference) {
+  .list__item {
+    animation: list-item-anim 500ms ease-out;
+  }
+
+  .storage__diagram::before {
+    animation: storage-fill-anim 1s ease-out forwards;
+  }
+  .storage__diagram::after {
+    animation: storage-ball-anim 1s ease-out forwards;
+  }
+  .storage__pop-up {
+    visibility: hidden;
+    animation: storage-pop-anim 1s ease-out 1s forwards;
+  }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 62rem) {
+  .storage__pop-up:after {
+    animation: storage-lg-pop-after-anim 1s ease-out 1s forwards;
+  }
+  .storage__text {
+    animation: storage-lg-pop-anim 1s ease-out 1s forwards;
+  }
+}
+/* no animations for users who prefer reduced animations */
+@media (prefers-reduced-motion: reduce) {
+  .storage__pop-up {
+    visibility: visible;
   }
 }
 
