@@ -1,6 +1,6 @@
 /* variables */
 
-$prim-gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+$prim-gradient: hsl(6, 100%, 80%), hsl(335, 100%, 65%);
 
 $neu-pale-blue: hsl(243, 100%, 93%);
 $neu-gray-blue: hsl(229, 7%, 55%);
@@ -15,8 +15,8 @@ $font-bold: 700;
 $bg-main-desktop: "../images/bg-desktop.png";
 $bg-main-mobile: "../images/bg-mobile.png";
 
-$breakpoint-tablet: 63rem;
-$breakpoint-laptop: 83rem;
+$breakpoint-tablet: 36rem;
+$breakpoint-laptop: 62rem;
 
 $white: hsl(0, 0%, 100%);
 $black: hsl(0, 0%, 0%);
@@ -40,7 +40,7 @@ body {
   font-family: $font-family;
   font-size: $font-size;
   font-weight: $font-regular;
-  color: $white;
+  color: $neu-pale-blue;
   min-width: 14rem;
   width: calc(100% - 3em);
   margin: 0 1.5em;
@@ -128,11 +128,7 @@ body {
       height: 0.8rem;
       margin: 0.125rem 0 0.1rem 0.1rem;
       border-radius: 1em;
-      background: linear-gradient(
-        to right,
-        hsl(6, 100%, 80%),
-        hsl(335, 100%, 65%)
-      );
+      background: linear-gradient(to right, $prim-gradient);
     }
     &::after {
       content: "";
@@ -237,7 +233,36 @@ body {
   }
 }
 
-@media screen and (min-width: 36rem) {
+/* footer */
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 0.75rem;
+  text-align: center;
+  color: $neu-pale-blue;
+  font-weight: $font-regular;
+  margin-bottom: 2em;
+  &__section {
+    margin-top: 1em;
+  }
+  &__link {
+    color: $white;
+    text-decoration: none;
+    font-weight: $font-bold;
+    &:hover,
+    &:focus-visible {
+      color: $white;
+      outline: 3px dotted $highlight !important;
+      outline-offset: 0.25rem;
+    }
+    &:focus:not(:focus-visible) {
+      outline: transparent;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
   .storage {
     &__pop-up {
       top: 5em;
@@ -258,7 +283,7 @@ body {
   }
 }
 
-@media screen and (min-width: 62rem) {
+@media screen and (min-width: $breakpoint-laptop) {
   body {
     background: url($bg-main-desktop) no-repeat $neu-very-dark-blue;
     background-position: bottom;
@@ -288,5 +313,12 @@ body {
       animation: storage-lg-pop-anim 1s ease-out 1s forwards;
       padding: 1.25em 1.5em;
     }
+  }
+}
+
+@media screen and (max-height: 43rem) {
+  .attribution {
+    position: relative;
+    margin-top: 5em;
   }
 }
