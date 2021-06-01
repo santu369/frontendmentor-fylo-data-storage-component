@@ -325,7 +325,7 @@ body {
 @media (prefers-reduced-motion: no-preference) {
   .list {
     &__item {
-      animation: list-item-anim 500ms ease-out;
+      animation: list-item-anim 500ms ease-out 200ms;
     }
   }
   .storage {
